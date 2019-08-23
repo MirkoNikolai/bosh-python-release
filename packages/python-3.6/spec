@@ -1,0 +1,10 @@
+---
+name: python-3.6
+
+files:
+- python36/compile.env
+- python36/runtime.env
+- python36/Python-3.6.9.tar.xz
+- python36/pip-19.2.2-py2.py3-none-any.whl
+- python36/setuptools-41.2.0-py2.py3-none-any.whl
+- python36/wheel-0.33.6-py2.py3-none-any.whl

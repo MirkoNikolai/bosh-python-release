@@ -1,0 +1,33 @@
+set -e
+
+echo "Copying compile.env..."
+mkdir ${BOSH_INSTALL_TARGET}/bosh
+cp python36/runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
+cp python36/compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
+
+cd python36
+
+echo "Extracting python..."
+tar xf Python-3.6.9.tar.xz
+
+echo "Building python..."
+pushd Python-3.6.9
+  ./configure --prefix=$BOSH_INSTALL_TARGET
+  make
+  make install
+popd
+
+echo "Creating the pip site packages..."
+mkdir -p $BOSH_INSTALL_TARGET/lib/python3.6/site-packages
+
+echo "Setting the PYTHONPATH with setuptools and pip site packages..."
+export PYTHONPATH=$BOSH_INSTALL_TARGET/lib/python3.6/site-packages:$PYTHONPATH
+
+echo "Update pip..."
+  /var/vcap/packages/python-3.6/bin/python3 -m pip install --upgrade pip-19.2.2-py2.py3-none-any.whl
+
+echo "Installing setuptools..."
+  /var/vcap/packages/python-3.6/bin/python3 -m pip install setuptools-41.2.0-py2.py3-none-any.whl
+
+echo "Installing wheel..."
+  /var/vcap/packages/python-3.6/bin/python3 -m pip install wheel-0.33.6-py2.py3-none-any.whl

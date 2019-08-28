@@ -3,12 +3,11 @@ name: test
 
 releases:
 - name: python
-  version: create
-  url: file:///Users/pivotal/workspace/python-release
+  version: latest 
 
 stemcells:
 - alias: default
-  os: ubuntu-trusty
+  os: ubuntu-xenial
   version: latest
 
 update:

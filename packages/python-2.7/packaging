@@ -6,10 +6,10 @@ cp runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
 cp compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
 
 echo "Extracting python..."
-tar xzvf Python-2.7.6.tgz
+tar xf Python-2.7.16.tar.xz
 
 echo "Building python..."
-pushd Python-2.7.6
+pushd Python-2.7.16
   ./configure --prefix=$BOSH_INSTALL_TARGET
   make
   make install
@@ -30,7 +30,7 @@ pushd setuptools-2.2
 popd
 
 echo "Extracting pip..."
-tar xzvf pip-1.5.2.tar.gz
+tar xzvf pip-9.0.3.tar.gz
 
 echo "Creating the pip site packages..."
 mkdir -p $BOSH_INSTALL_TARGET/lib/python2.7/site-packages
@@ -39,6 +39,15 @@ echo "Setting the PYTHONPATH with setuptools and pip site packages..."
 export PYTHONPATH=$BOSH_INSTALL_TARGET/lib/python2.7/site-packages:$PYTHONPATH
 
 echo "Installing pip..."
-pushd pip-1.5.2
+pushd pip-9.0.3
   /var/vcap/packages/python-2.7/bin/python setup.py install --prefix=$BOSH_INSTALL_TARGET
 popd
+
+#echo "Upgrade setuptools"
+#/var/vcap/packages/python-2.7/bin/pip install --upgrade setuptools-41.2.0-py2.py3-none-any.whl
+
+#echo "Upgrade pip" 
+#/var/vcap/packages/python-2.7/bin/pip install --upgrade pip-19.2.2-py2.py3-none-any.whl
+
+echo "Install wheel" 
+/var/vcap/packages/python-2.7/bin/pip install wheel-0.33.6-py2.py3-none-any.whl

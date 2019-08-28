@@ -4,6 +4,9 @@ name: python-2.7
 files:
 - compile.env
 - runtime.env
-- Python-2.7.6.tgz
-- pip-1.5.2.tar.gz
+- Python-2.7.16.tar.xz
+- pip-9.0.3.tar.gz
+- pip-19.2.2-py2.py3-none-any.whl
 - setuptools-2.2.tar.gz
+- setuptools-41.2.0-py2.py3-none-any.whl
+- wheel-0.33.6-py2.py3-none-any.whl

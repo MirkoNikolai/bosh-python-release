@@ -1,0 +1,39 @@
+name: python
+version: 0.0.3
+commit_hash: 2bc10ef
+uncommitted_changes: false
+jobs:
+- name: python-2.7-test
+  version: e1c4e33c094bc6b3ed1efd637d109cb996cac9221132d4ac18808b496f3571d7
+  fingerprint: e1c4e33c094bc6b3ed1efd637d109cb996cac9221132d4ac18808b496f3571d7
+  sha1: sha256:7eefcd1329aad275c97d48179323120c0d6d852c4338255b891f522d457a123b
+  packages:
+  - python-2.7
+  - python-2.7-test
+- name: python-3.6-test
+  version: 6b827586279583c15acb9ec593f3354359508299dda7ccb15e027d610637f9e5
+  fingerprint: 6b827586279583c15acb9ec593f3354359508299dda7ccb15e027d610637f9e5
+  sha1: sha256:49a7f2582d0d676e46f616cbd1da21cf6b1712a11dbd4b6f99ad49ae4443b15f
+  packages:
+  - python-3.6
+packages:
+- name: python-2.7
+  version: 43c168f11f73b938148c2fa846f314d5d6c80c197373b7bf43cd6bd7c5ee90b6
+  fingerprint: 43c168f11f73b938148c2fa846f314d5d6c80c197373b7bf43cd6bd7c5ee90b6
+  sha1: sha256:882f36f716020c446158c63ea2d93f37c4ced80d23a65d57ddb30a4acde04568
+  dependencies: []
+- name: python-2.7-test
+  version: 3541ac304946697e5decfcd7387093f7ab4398788c261bd693b3f2f69e06e4d3
+  fingerprint: 3541ac304946697e5decfcd7387093f7ab4398788c261bd693b3f2f69e06e4d3
+  sha1: sha256:bf1c65bc2f6aed805df3f58d9223a5f0fcfbbb0f0aa4fc556635c4c0462f8125
+  dependencies:
+  - python-2.7
+- name: python-3.6
+  version: 198e9b97c8ecb199af54b2ee76a5d07c2e196661eeaed56d4a23e58b6dcf8bdf
+  fingerprint: 198e9b97c8ecb199af54b2ee76a5d07c2e196661eeaed56d4a23e58b6dcf8bdf
+  sha1: sha256:3b8f14e6e8537c036f329e349bae86b0a587bb9cc3f1fa5a661694b443a97c1c
+  dependencies: []
+license:
+  version: 850893456ab4b5e6be730bbcf0056892bb753e2cba4fba21e5f64035f3fc53db
+  fingerprint: 850893456ab4b5e6be730bbcf0056892bb753e2cba4fba21e5f64035f3fc53db
+  sha1: sha256:4c4e1f11b7334f404391facefc43b73ea20ed7719ba3bc416ca6499a38e93e90
